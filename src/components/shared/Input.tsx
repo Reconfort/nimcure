@@ -2,9 +2,7 @@
 import { useState, MouseEvent } from 'react';
 
 import {
-  Checkbox,
   FormControl,
-  FormControlLabel,
   IconButton,
   InputAdornment,
   InputLabel,
@@ -18,7 +16,7 @@ export const Input = () => {
       id='outlined-basic'
       label='Email Address'
       variant='outlined'
-      className='w-full'
+      className='w-full !h-[60px]'
     />
   );
 };
@@ -35,7 +33,7 @@ export const ToggleInput = () => {
   };
 
   return (
-    <FormControl className='w-full !rounded-none' variant='outlined'>
+    <FormControl className='w-full !h-[60px]' variant='outlined'>
       <InputLabel htmlFor='outlined-adornment-password'>Password</InputLabel>
       <OutlinedInput
         id='outlined-adornment-password'
@@ -53,7 +51,7 @@ export const ToggleInput = () => {
               edge='end'
             >
               {showPassword ? (
-                <p className='text-xs'>SHOW</p>
+                <p className='text-xs'>HIDE</p>
               ) : (
                 <p className='text-xs'>SHOW</p>
               )}
@@ -67,11 +65,16 @@ export const ToggleInput = () => {
 };
 
 export const ChechBox = () => {
+  const [checked, setChecked] = useState(false);
   return (
-    <FormControlLabel
-      control={<Checkbox defaultChecked />}
-      label='Remember me'
-      className='gap-0'
-    />
+    <div
+      className='flex items-center gap-2 cursor-pointer group'
+      onClick={() => setChecked(!checked)}
+    >
+      <button className='bg-white w-7 h-7 border-[2px] flex items-center justify-center border-black rounded-md  group-hover:scale-110'>
+        {checked && <div className='bg-black w-5 h-5 rounded-sm'></div>}
+      </button>
+      <p className='text-black text-sm font-medium'>Remember me</p>
+    </div>
   );
 };
