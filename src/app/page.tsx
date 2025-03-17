@@ -36,7 +36,7 @@ export default function Home() {
               </div>
             </div>
 
-            <CustomButton path='dashboard/patients' />
+            <CustomButton title='Login' path='dashboard/patients' />
           </form>
 
           <div className='flex justify-center items-center gap-2'>

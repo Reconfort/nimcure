@@ -12,7 +12,7 @@ const UserInfo = () => {
     <section className='hidden md:flex flex-col gap-2 relative'>
       {/* Toggle Info */}
       <div
-        className='flex justify-center items-center gap-2 px-4 py-3 group cursor-pointer relative z-20'
+        className='flex justify-center items-center gap-2 py-3 group cursor-pointer relative z-20'
         onClick={toggleDropdown}
       >
         <Image
@@ -45,7 +45,7 @@ const UserInfo = () => {
           icon={<FiLogOut />}
           label={'Logout'}
           isActive={false}
-          clasName='text-red-600'
+          clasName='bg-red-100 text-red-600'
         />
       </div>
     </section>
