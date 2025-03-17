@@ -21,7 +21,7 @@ const Hamburger = ({ NAV_ITEMS, pathname }: HamburgerProps) => {
       <div
         className={`${
           active ? 'translate-x-0 opacity-100' : 'translate-x-[100%] opacity-0'
-        } fixed right-0 h-screen bg-white mt-[1.9%] w-[50vw] md:w-[40vw] flex flex-col justify-start items-start gap-2 border-l border-[#827f9833]`}
+        } fixed right-0 h-screen bg-white z-30 mt-[1.9%] w-[50vw] md:w-[40vw] flex flex-col justify-start items-start gap-2 border-l border-[#827f9833]`}
       >
         <ul className='flex flex-col gap-2 w-full'>
           {NAV_ITEMS.map(({ href, icon, label }) => (

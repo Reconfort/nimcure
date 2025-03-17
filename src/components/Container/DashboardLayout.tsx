@@ -12,8 +12,8 @@ const Layout = ({ children, header }: LAYOUT_PROPS) => {
     <section className='bg-[#F9F9F9] min-w-screen min-h-screen'>
       <Navbar />
       <Header className='py-4'>{header}</Header>
-      <section className='center p-4'>
-        <div className='container flex justify-between items-center'>
+      <section className='center px-4'>
+        <div className='container flex flex-col justify-between items-center'>
           {children}
         </div>
       </section>

@@ -1,5 +1,7 @@
 import Layout from '@/components/Container/DashboardLayout';
+import RecentPatient from '@/components/sections/RecentPatient';
 import { CustomButton } from '@/components/shared/Button';
+import { Search, SelectInput } from '@/components/shared/Input';
 import { IoIosAdd } from 'react-icons/io';
 
 const Patients = () => {
@@ -11,7 +13,20 @@ const Patients = () => {
         </div>
       }
     >
-      <h1>Patients</h1>
+      {/* Header */}
+      <div className='w-full flex items-center justify-between'>
+        <div className='flex items-center gap-4'>
+          <p>Sort by</p>
+          <SelectInput />
+        </div>
+
+        <div className='flex items-center gap-4 relative'>
+          <Search />
+        </div>
+      </div>
+
+      {/* Body */}
+      <RecentPatient />
     </Layout>
   );
 };

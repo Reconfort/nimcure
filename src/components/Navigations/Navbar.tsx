@@ -23,7 +23,7 @@ const Navbar = () => {
   const pathname = usePathname(); //Current Path
 
   return (
-    <section className='bg-white center border-b border-[#827f9833] px-4 p-2 lg:p-0'>
+    <section className='bg-white fixed w-screen center border-b border-[#827f9833] px-4 p-2 lg:p-0 z-50'>
       <div className='container flex justify-between items-center'>
         <Image
           src='/assets/nimcure_logo.png'

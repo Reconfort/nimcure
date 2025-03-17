@@ -8,7 +8,7 @@ type HeaderProps = {
 
 const Header = ({ children, className }: HeaderProps) => {
   return (
-    <section className=' center border-b border-[#827f9833] px-4 p-2 lg:p-0'>
+    <section className=' center border-b border-[#827f9833] px-4 p-2 lg:p-0 !pt-16'>
       <div
         className={`container flex justify-between items-center ${className}`}
       >

@@ -3,7 +3,7 @@ import Layout from '@/components/Container/DashboardLayout';
 const Overview = () => {
   return (
     <Layout>
-      <div>Overview</div>
+      <div className='w-full flex items-center justify-between'>Overview</div>
     </Layout>
   );
 };
