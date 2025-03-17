@@ -1,23 +1,34 @@
 import { CustomButton } from '@/components/shared/Button';
-import { RiEdit2Fill } from 'react-icons/ri';
+import QRCode from './QRCode';
 
 const ScanPackage = () => {
   return (
-    <section className='py-8 px-4 lg:px-8 flex flex-col justify-start gap-4 lg:gap-8 border-b border-[#827f9833]'>
-      <p>Oluwaseun Aregbesola has a drug cycle of two(2) months</p>
+    <section className='py-8 px-4 lg:px-8 flex-col center gap-4 lg:gap-8 border-b border-[#827f9833]'>
+      <p>
+        Scan a package to assign it to <b>Oluwaseun Aregbesola</b>
+      </p>
 
-      <div className='flex flex-col justify-start gap-4 items-start md:items-center mb-6 w-full md:w-1/4'>
-        <div className='space-y-1'>
-          <h2 className='text-xl font-semibold'>Patient's Information</h2>
-          <p className='text-sm text-gray-500'>
-            Personal information about Patient.
-          </p>
+      <div className='flex justify-start gap-4 center mb-6 w-full'>
+        {/* QR Code */}
+        <div className='w-full space-y-1'>
+          <QRCode />
         </div>
-        <CustomButton
-          title={` Edit Patient's`}
-          icon={<RiEdit2Fill />}
-          className='!max-w-[260px] xl:!max-w-[260px] !text-sm !border !bg-white !border-[#1F5AF4] !text-blue-600 hover:bg-blue-50'
-        />
+
+        {/* Troubleshoot */}
+        <div className='w-full space-y-1'>
+          <p className='text-sm text-gray-500'>
+            Trouble scanning QR Code? Enter manually
+          </p>
+          <input
+            type='text'
+            className='px-4 py-3 outline-none text-sm text-[#2A2A2A]/50 font-semibold border border-[#808080] w-full'
+            placeholder='Enter code'
+          />
+          <CustomButton
+            title={`Submit code`}
+            className='!w-full !text-sm !border !bg-white !border-[#1F5AF4] !text-blue-600 hover:bg-blue-50 !mt-[24px]'
+          />
+        </div>
       </div>
     </section>
   );
