@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 const patientData = [
@@ -137,7 +138,7 @@ const RecentPatient = () => {
     <div className='w-full bg-white p-5 overflow-x-auto my-4'>
       <table className='min-w-full text-sm text-gray-700'>
         <thead>
-          <tr className='text-left border-b text-gray-500'>
+          <tr className='text-left border-b border-gray-100 text-gray-500'>
             <th className='p-5 font-medium'>Hospital ID</th>
             <th className='p-5 font-medium'>Patient’s Name</th>
             <th className='p-5 font-medium'>Phone Number</th>
@@ -149,7 +150,7 @@ const RecentPatient = () => {
         </thead>
         <tbody>
           {currentData.map((item, idx) => (
-            <tr key={idx} className='border-b hover:bg-gray-50'>
+            <tr key={idx} className='border-b border-gray-100 hover:bg-gray-50'>
               <td className='p-5'>{item.hospitalId}</td>
               <td className='p-5'>{item.name}</td>
               <td className='p-5'>{item.phone}</td>
@@ -157,7 +158,7 @@ const RecentPatient = () => {
               <td className='p-5'>{item.location}</td>
               <td className='p-5'>
                 <span
-                  className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  className={`p-3 rounded-sm text-xs font-semibold ${
                     statusColors[item.status] || 'bg-gray-100 text-gray-600'
                   }`}
                 >
@@ -165,9 +166,12 @@ const RecentPatient = () => {
                 </span>
               </td>
               <td className='p-5'>
-                <button className='border border-blue-500 text-blue-500 text-sm px-4 py-1 rounded hover:bg-blue-50 transition'>
+                <Link
+                  href={`/patients/view-patient`}
+                  className='border border-blue-500 text-blue-500 text-sm px-4 py-3 rounded hover:bg-blue-50 transition'
+                >
                   View
-                </button>
+                </Link>
               </td>
             </tr>
           ))}

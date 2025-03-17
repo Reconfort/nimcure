@@ -45,7 +45,7 @@ const UserInfo = () => {
           icon={<FiLogOut />}
           label={'Logout'}
           isActive={false}
-          clasName='bg-red-100 text-red-600'
+          className='bg-red-100 text-red-600'
         />
       </div>
     </section>

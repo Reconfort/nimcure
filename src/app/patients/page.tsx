@@ -1,5 +1,5 @@
 import Layout from '@/components/Container/DashboardLayout';
-import RecentPatient from '@/components/sections/RecentPatient';
+import RecentPatient from '@/components/sections/Patients/RecentPatient';
 import { CustomButton } from '@/components/shared/Button';
 import { Search, SelectInput } from '@/components/shared/Input';
 import { IoIosAdd } from 'react-icons/io';

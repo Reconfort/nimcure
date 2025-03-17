@@ -30,7 +30,7 @@ const Hamburger = ({ NAV_ITEMS, pathname }: HamburgerProps) => {
               href={href}
               icon={icon}
               label={label}
-              clasName='w-full !justify-start !items-start'
+              className='w-full !justify-start !items-start'
               isActive={pathname === href}
             />
           ))}

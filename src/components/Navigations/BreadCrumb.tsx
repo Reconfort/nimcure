@@ -8,34 +8,42 @@ const BreadCrumb = () => {
   const pathname = usePathname();
   const pathnames = pathname.split('/').filter((path) => path !== '');
 
-  // index of dashboard
-  const dashboardIndex = pathnames.indexOf('dashboard');
+  // Remove 'dashboard' from the path
+  const filteredPathnames = pathnames.filter(
+    (path) => path.toLowerCase() !== 'dashboard'
+  );
 
-  // next segment after dashboard
-  const dynamicIndex = dashboardIndex + 1; // dynamic route (e.g., dispatch, patients, etc.)
-
-  // dynamic part of URL
-  const dynamicPart = pathnames[dynamicIndex];
-
-  // Slice path from dynamic part
-  const filteredPathnames = pathnames.slice(dynamicIndex); // Everything after dashboard
-
+  // Generate link for each breadcrumb item
   const generateLink = (index: number) =>
     `/${filteredPathnames.slice(0, index + 1).join('/')}`;
 
   return (
     <section className='breadcrumb'>
       <ul className='flex items-center justify-start gap-1'>
-        {filteredPathnames.map((path, index) => (
-          <Fragment key={index}>
-            <Link href={generateLink(index)}>
-              {path.charAt(0).toUpperCase() + path.slice(1)}{' '}
-            </Link>
-            {index < filteredPathnames.length - 1 && (
-              <LuSlash className='-rotate-16' />
-            )}
-          </Fragment>
-        ))}
+        {filteredPathnames.map((path, index) => {
+          const isLast = index === filteredPathnames.length - 1;
+
+          return (
+            <Fragment key={index}>
+              {!isLast ? (
+                <Link href={generateLink(index)} className='text-gray-700'>
+                  {path
+                    .replace(/-/g, ' ')
+                    .replace(/^./, (str) => str.toUpperCase())}
+                </Link>
+              ) : (
+                <span className='text-[#276DF7] text-xl'>
+                  {path
+                    .replace(/-/g, ' ')
+                    .replace(/^./, (str) => str.toUpperCase())}
+                </span>
+              )}
+              {index < filteredPathnames.length - 1 && (
+                <LuSlash className='-rotate-16' />
+              )}
+            </Fragment>
+          );
+        })}
       </ul>
     </section>
   );

@@ -12,7 +12,9 @@ const Header = ({ children, className }: HeaderProps) => {
       <div
         className={`container flex justify-between items-center ${className}`}
       >
-        <BreadCrumb />
+        <div className='w-full'>
+          <BreadCrumb />
+        </div>
         {children}
       </div>
     </section>

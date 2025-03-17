@@ -11,10 +11,14 @@ import {
   TextField
 } from '@mui/material';
 
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-
 import { LuSearch } from 'react-icons/lu';
 import { FaChevronDown } from 'react-icons/fa6';
+
+interface ContainerInputProps {
+  className?: string;
+  title: string;
+  value: string;
+}
 
 export const Input = () => {
   return (
@@ -137,5 +141,23 @@ export const SelectInput = () => {
         <p className='p-2 hover:text-[#1F5AF4] cursor-pointer'>#1F5AF4</p>
       </div>
     </section>
+  );
+};
+
+export const ContainerInput = ({
+  className,
+  title,
+  value
+}: ContainerInputProps) => {
+  return (
+    <div
+      className={`w-full border border-[#808080]/50 bg-[#EFEFEF] p-4 flex flex-col gap-1 items-start justify-start ${className}`}
+    >
+      <h2 className='font-light text-[#676767] text-sm'>{title}</h2>
+      <input
+        value={value}
+        className='font-bold text-[#2A2A2A] w-full border-0 outline-0'
+      />
+    </div>
   );
 };
