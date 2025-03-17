@@ -30,7 +30,7 @@ const TopHeader = ({ activeTab, setActiveTab }: any) => {
         </button>
         {activeDropdoiwn && (
           <div
-            className={`flex flex-col lg:hidden gap-2 absolute bg-white shadow z-30 top-0 mt-[17.5rem]`}
+            className={`flex flex-col lg:hidden gap-2 absolute bg-white shadow top-0 mt-[17.5rem]`}
           >
             <NavItem
               label={'Patient Infromation'}
