@@ -61,7 +61,3 @@ This project is hosted on **Netlify**. You can view the live version of the app 
 - I followed best practices for clean and maintainable code.
 - The application utilizes **CSS Modules** for component-level styles, ensuring scoped and reusable styles.
 - **Styled Components** were used for dynamic styling based on state.
-
-### Challenges & Solutions
-- One challenge was ensuring the pixel-perfect match with the Figma design. I used tools like **Figma Inspect** to closely match the typography, spacing, and colors.
-- I had to pay special attention to the responsive layout to ensure it works across all screen sizes.
