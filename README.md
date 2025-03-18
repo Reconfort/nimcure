@@ -48,7 +48,7 @@ To get a local copy up and running, follow these simple steps:
 
 ## Deployment
 
-This project is hosted on **Netlify**. You can view the live version of the app [here](https://nimcureapp1.netlify.app/patients).
+This project is hosted on **Netlify**. You can view the live version of the app [here](https://nimcureapp1.netlify.app).
 
 ## Approach & Solution
 
