@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-import { Screen } from '@/components/shared/Screen';
 
 const gilroy = localFont({
   src: '../fonts/gilroy/Gilroy-Regular.ttf',
@@ -22,7 +21,6 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${gilroy.className} antialiased`}>
         {children}
-        <Screen />
       </body>
     </html>
   );
